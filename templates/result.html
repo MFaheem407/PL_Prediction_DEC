@@ -462,7 +462,7 @@
       </div>
       <div class="modal-body">
   
-          
+        <form action="{{ url_for('predict') }}" method="POST"> 
   
   
           <select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here..">
@@ -503,19 +503,20 @@
               -->
             </select>
             <label class="mdb-main-label">TEAM_B</label>
+          </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
           Close
         </button>
         <div>
-          <button type="button" class="btn btn-warning" id="IPL" >PREDICT</button>
+          <button type="submit" class="btn btn-warning" id="IPL" >PREDICT</button>
         </div>
     </div>
 
     </div>
   </div>
-  </div>
+  </div></div>
 <!-- IPL MATCH MODEL END -->
 
 
@@ -554,6 +555,61 @@
     $(document).ready(function() {
     $('.mdb-select').materialSelect();
     $('.carousel').carousel({})
+
+
+
+
+
+
+    // $(document).on('submit','#frm',function(event)
+    // {
+    //   event.preventDefault();  
+        
+    //    var media_name=$('#media_name').val();
+    //    var media_description=$('#media_description').val();
+    //    var media_date=$('#media_date').val();
+    //    var media_status=$('#media_status').val();
+      
+      
+    //   $.ajax({       
+    //                  url:baseurl+"/php_action/media.php", 
+    //                  method:"POST",  
+    //                  data:{action:action,media_name:media_name,edit_id:edit_id,media_description:media_description,media_date:media_date,media_status:media_status,image_url,image_url},
+    //                    beforeSend: function() {                          
+    //                  $('#loader').css('display','block');
+    //                  },                                                     
+    //                  success:function(data)  
+    //                  {  
+    //                  if(data==1)
+    //                  {
+                      
+    //                     toastr["success"]('Media Added Successfully')
+    //                     $('#loader').css('display','none');
+    //                    load_data();                       
+    //                    action='save_media';
+    //                    reset();
+    //                  }  
+    //                  else if(data==2)
+    //                  {
+    //                    toastr["success"]('Media Updated Successfully')
+    //                     $('#loader').css('display','none');
+    //                    load_data();
+    //                    action='save_media';
+    //                    reset();
+    //                  }                  
+    //                  else
+    //                  {
+    //                     toastr["error"](data)
+    //                     $('#loader').css('display','none');
+    //                  }
+    //                 }
+    //             }); 
+       
+
+    // });
+
+
+
     
     
 
