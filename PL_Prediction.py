@@ -72,19 +72,22 @@ def predict():
         elif team2 == 'Sunrisers Hyderabad':
             temp_array = temp_array + [0,0,0,0,0,0,0,1]
 
-        input_features = [int(x) for x in request.form.values()]
+        input_features = [eval(x) for x in request.form.values()]
         features_values = [np.array(input_features)]
+        print(features_values)
 
-        features_name =  ['team1',  'team2', 'team1_wins']
+        features_name =  ['team1',  'team2', 'team1_toss_win', 'team1_bat', 'venue']
 
         df = pd.DataFrame(features_values, columns = features_name)
 
         output = model.predict(df)
         str1 = 'wins'
         if output == 0.0:
-            res_val = team1+str1
+            res_val = team1+' ' + str1
         elif output == 1.0:
-            res_val = team2+str1
+            res_val = team2+ ' ' + str1
+
+        print(res_val)
 
         return render_template('result.html', prediction_text = '{}'.format(output))
 
