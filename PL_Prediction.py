@@ -73,21 +73,18 @@ def predict():
             temp_array = temp_array + [0,0,0,0,0,0,0,1]
 
         input_features = [int(x) for x in request.form.values()]
-        print(input_features)
         features_values = [np.array(input_features)]
 
         features_name =  ['team1',  'team2', 'team1_wins']
 
-        print(features_values)
-
         df = pd.DataFrame(features_values, columns = features_name)
 
         output = model.predict(df)
-        str = 'wins'
+        str1 = 'wins'
         if output == 0.0:
-            res_val = team1+str
+            res_val = team1+str1
         elif output == 1.0:
-            res_val = team2+str
+            res_val = team2+str1
 
         return render_template('result.html', prediction_text = '{}'.format(output))
 
