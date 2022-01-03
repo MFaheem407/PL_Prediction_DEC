@@ -462,10 +462,10 @@
       </div>
       <div class="modal-body">
   
-        <!-- <form action="{{ url_for('predict') }}" method="POST">  -->
+        <form action="{{ url_for('predict') }}" method="POST"> 
   
   
-          <select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here..">
+          <select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." name = 'batting-team'>
             <option value="" disabled="" selected="">Choose Your Team</option>
             <option value="1">Mumbai Indians</option>
               <option value="2">Sunrisers Hyderabad</option>
@@ -485,7 +485,8 @@
             <label class="mdb-main-label">TEAM-A</label> 
   
   
-            <select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here..">
+            <select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
+            name = 'bowling-team'>
               <option value="" disabled="" selected="">Choose Your Team</option>
               <option value="1">Mumbai Indians</option>
               <option value="2">Sunrisers Hyderabad</option>
@@ -503,7 +504,7 @@
               -->
             </select>
             <label class="mdb-main-label">TEAM_B</label>
-          <!-- </form> -->
+          
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
@@ -512,6 +513,7 @@
         <div>
           <button type="submit" class="btn btn-warning" id="IPL" >PREDICT</button>
         </div>
+        </form> 
     </div>
 
     </div>

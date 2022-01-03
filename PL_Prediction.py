@@ -26,15 +26,15 @@ def result_page():
 
 
 
-@app.route('/predict', methods = ['POST'])
+@app.route('/predict', methods = ['POST','GET'])
 def predict():
     print('team222222')
     #Rendering result on HTML GUI
     temp_array = list()
     if request.method == 'POST':
         
-        team1 = request.form['batting-team']
-        print(team1)
+        team1 = request.form.get('batting-team')
+        print("Team1 is",team1)
         if team1 == 'Chennai Super Kings':
             temp_array = temp_array + [1,0,0,0,0,0,0,0]
         elif team1 == 'Delhi Daredevils':
@@ -53,7 +53,8 @@ def predict():
             temp_array = temp_array + [0,0,0,0,0,0,0,1]
             
             
-        team2 = request.form['bowling-team']
+        team2 = request.form.get('bowling-team')
+        print("Team2 is", team2)
         if team2 == 'Chennai Super Kings':
             temp_array = temp_array + [1,0,0,0,0,0,0,0]
         elif team2 == 'Delhi Daredevils':
@@ -72,11 +73,14 @@ def predict():
             temp_array = temp_array + [0,0,0,0,0,0,0,1]
 
         input_features = [int(x) for x in request.form.values()]
+        print(input_features)
         features_values = [np.array(input_features)]
 
         features_name =  ['team1',  'team2', 'team1_wins']
 
-        df = pd.dataframe(features_values, columns = features_name)
+        print(features_values)
+
+        df = pd.DataFrame(features_values, columns = features_name)
 
         output = model.predict(df)
         str = 'wins'
