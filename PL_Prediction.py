@@ -21,75 +21,88 @@ def stats_page():
 
 @app.route('/result.html')
 def result_page():
-    print('team1')
     return render_template('result.html')
 
 
 
 @app.route('/predict', methods = ['POST','GET'])
 def predict():
-    print('team222222')
     #Rendering result on HTML GUI
     temp_array = list()
     if request.method == 'POST':
         
-        team1 = request.form.get('batting-team')
-        print("Team1 is",team1)
-        if team1 == 'Chennai Super Kings':
+        team1 = request.form.get('Home-Team') #select tag name is Home-Team
+        
+        if team1 == '1':
             temp_array = temp_array + [1,0,0,0,0,0,0,0]
-        elif team1 == 'Delhi Daredevils':
+            team1= 'Mumbai Indians'
+        elif team1 == '2':
             temp_array = temp_array + [0,1,0,0,0,0,0,0]
-        elif team1 == 'Kings XI Punjab':
+            team1= 'Sunrisers Hyderabad'
+        elif team1 == '3':
             temp_array = temp_array + [0,0,1,0,0,0,0,0]
-        elif team1 == 'Kolkata Knight Riders':
+            team1= 'Kolkata Knight Riders'
+        elif team1 == '4':
             temp_array = temp_array + [0,0,0,1,0,0,0,0]
-        elif team1 == 'Mumbai Indians':
+            team1= 'Royal challangers banglore'
+        elif team1 == '5':
             temp_array = temp_array + [0,0,0,0,1,0,0,0]
-        elif team1 == 'Rajasthan Royals':
+            team1= 'Delhi Capitals'
+        elif team1 == '6':
             temp_array = temp_array + [0,0,0,0,0,1,0,0]
-        elif team1 == 'Royal Challengers Bangalore':
+            team1= 'Chennai Super Kings'
+        elif team1 == '7':
             temp_array = temp_array + [0,0,0,0,0,0,1,0]
-        elif team1 == 'Sunrisers Hyderabad':
+            team1= 'Rajasthan Royals'
+        elif team1 == '8':
             temp_array = temp_array + [0,0,0,0,0,0,0,1]
+            team1= 'Punjab Kings'
             
             
-        team2 = request.form.get('bowling-team')
-        print("Team2 is", team2)
-        if team2 == 'Chennai Super Kings':
+        team2 = request.form.get('Away-Team') #select tag name is Away-Team
+        
+        if team2 == '1':
             temp_array = temp_array + [1,0,0,0,0,0,0,0]
-        elif team2 == 'Delhi Daredevils':
+            team2= 'Mumbai Indians'
+        elif team2 == '2':
             temp_array = temp_array + [0,1,0,0,0,0,0,0]
-        elif team2 == 'Kings XI Punjab':
+            team2= 'Sunrisers Hyderabad'
+        elif team2 == '3':
             temp_array = temp_array + [0,0,1,0,0,0,0,0]
-        elif team2 == 'Kolkata Knight Riders':
+            team2= 'Kolkata Knight Riders'
+        elif team2 == '4':
             temp_array = temp_array + [0,0,0,1,0,0,0,0]
-        elif team2 == 'Mumbai Indians':
+            team2= 'Royal challangers banglore'
+        elif team2 == '5':
             temp_array = temp_array + [0,0,0,0,1,0,0,0]
-        elif team2 == 'Rajasthan Royals':
+            team2= 'Delhi Capitals'
+        elif team2 == '6':
             temp_array = temp_array + [0,0,0,0,0,1,0,0]
-        elif team2 == 'Royal Challengers Bangalore':
+            team2= 'Chennai Super Kings'
+        elif team2 == '7':
             temp_array = temp_array + [0,0,0,0,0,0,1,0]
-        elif team2 == 'Sunrisers Hyderabad':
+            team2= 'Rajasthan Royals'
+        elif team2 == '8':
             temp_array = temp_array + [0,0,0,0,0,0,0,1]
+            team2= 'Punjab Kings'
 
         input_features = [eval(x) for x in request.form.values()]
         features_values = [np.array(input_features)]
-        print(features_values)
 
         features_name =  ['team1',  'team2', 'team1_toss_win', 'team1_bat', 'venue']
 
         df = pd.DataFrame(features_values, columns = features_name)
 
         output = model.predict(df)
-        str1 = 'wins'
+        str = 'winnner'
         if output == 0.0:
-            res_val = team1+' ' + str1
+            res_val = 'In the match between ' + team1 + ' and ' + team2 + team1 +' is the ' + str
         elif output == 1.0:
-            res_val = team2+ ' ' + str1
+            res_val = 'In the match between ' + team1 + ' and ' + team2 + team2 +' is the ' + str
 
-        print(res_val)
-
-        return render_template('result.html', prediction_text = '{}'.format(output))
+        
+       
+        return render_template('result.html', prediction_text = res_val)
 
 
 if __name__ == '__main__':

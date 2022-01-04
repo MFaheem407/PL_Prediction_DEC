@@ -163,7 +163,7 @@
 
 										<button
 										type="button"
-										class="btn text-white"
+										class="btn text-white predict_btn"
 										data-mdb-toggle="modal"
 										data-mdb-target="#exampleModal3"
 										style="margin-top: 17%;background-color: #2899D3;"
@@ -462,32 +462,33 @@
 				<div class="modal-body">
 
 
-					<select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." name = 'batting-team'>
-						<option value="" disabled="" selected="">Choose Your Team</option>
-						<option value="1">Mumbai Indians</option>
-						<option value="2">Sunrisers Hyderabad</option>
-						<option value="3">Kolkata Knight Riders</option>
-						<option value="4">Royal challangers banglore</option>
-						<option value="5">Delhi Capitals</option>
-						<option value="6">Chennai Super Kings</option>
-						<option value="7">Rajasthan Royals</option>
-						<option value="8">Punjab Kings</option>
+					<select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." 
+					name = 'Home-Team'>
+							<option value="text" disabled="" selected="">Choose Your Team</option>
+							<option value="1">Mumbai Indians</option>
+							<option value="2">Sunrisers Hyderabad</option>
+							<option value="3">Kolkata Knight Riders</option>
+							<option value="4">Royal challangers banglore</option>
+							<option value="5">Delhi Capitals</option>
+							<option value="6">Chennai Super Kings</option>
+							<option value="7">Rajasthan Royals</option>
+							<option value="8">Punjab Kings</option>
 
 					</select>
 					<label class="mdb-main-label">TEAM-A</label> 
 
 
 					<select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
-					name = 'bowling-team'>
-					<option value="" disabled="" selected="">Choose Your Team</option>
-					<option value="1">Mumbai Indians</option>
-					<option value="2">Sunrisers Hyderabad</option>
-					<option value="3">Kolkata Knight Riders</option>
-					<option value="4">Royal challangers banglore</option>
-					<option value="5">Delhi Capitals</option>
-					<option value="6">Chennai Super Kings</option>
-					<option value="7">Rajasthan Royals</option>
-					<option value="8">Punjab Kings</option>
+					name = 'Away-Team'>
+							<option value="text" disabled="" selected="">Choose Your Team</option>
+							<option value="1">Mumbai Indians</option>
+							<option value="2">Sunrisers Hyderabad</option>
+							<option value="3">Kolkata Knight Riders</option>
+							<option value="4">Royal challangers banglore</option>
+							<option value="5">Delhi Capitals</option>
+							<option value="6">Chennai Super Kings</option>
+							<option value="7">Rajasthan Royals</option>
+							<option value="8">Punjab Kings</option>
 					</select>
 					<label class="mdb-main-label">TEAM_B</label>
 
@@ -557,23 +558,27 @@
 					</select>
 					<label class="mdb-main-label">VENUE</label>
 				</div>
+				
 				<div class="modal-footer">
         			<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
           				Close
         			</button>
         		<div>
-          			<button type="submit" class="btn btn-warning" id="IPL" >PREDICT</button>
+          			<button  type="submit" class="btn btn-warning  " id="IPL" >PREDICT</button>
         		</div>
-       		</form> 
+       		</form>
+			
+			 
     	</div>
 		
     </div>
   </div>
   </div>
 </div>
-<div>
-	<p>The final predicted score (range): {{ prediction_text }}</p>
+<div style="text-align: center;">		<!-- Set it's CSS-->
+	<h2><p class="result_text">{{ prediction_text }}</p></h2>
 </div> 
+
 <!-- IPL MATCH MODEL END -->
 <!-- IPL MATCH MODEL END -->
 
@@ -611,6 +616,12 @@
 
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
 $(document).ready(function() {
+	// $('.result_text').text('');
+	$('.predict_btn').click(function()
+		{
+			$('.result_text').text('');
+		}
+	);
 	$('.mdb-select').materialSelect();
 	$('.carousel').carousel({})
 
