@@ -96,9 +96,9 @@ def predict():
         output = model.predict(df)
         str = 'winnner'
         if output == 0.0:
-            res_val = 'In the match between ' + team1 + ' and ' + team2 + team1 +' is the ' + str
+            res_val = 'In the match between ' + team1 + ' and ' + team2 + ', ' + team1 +' is the ' + str
         elif output == 1.0:
-            res_val = 'In the match between ' + team1 + ' and ' + team2 + team2 +' is the ' + str
+            res_val = 'In the match between ' + team1 + ' and ' + team2 + ', ' + team2 +' is the ' + str
 
         
        
