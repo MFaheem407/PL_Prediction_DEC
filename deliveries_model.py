@@ -269,5 +269,3 @@ print(lasso_regressor.best_score_)
 
 #Predicting the test set result  
 y2_pred= lasso_regressor.predict(X_test) 
-
-print('Accuracy of Lasso Regression classifier on test set: {:.2f}'.format(lasso_regressor.score(X_test, y_test)))

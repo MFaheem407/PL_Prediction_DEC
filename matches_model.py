@@ -237,4 +237,3 @@ y4_pred  =  naivebayes_classifier.predict(X_test)
 print("Confusion matrix\n ", confusion_matrix(y_test,y4_pred))
 print(classification_report(y_test,y4_pred))
 print('Accuracy of Naive Bayes classifier on test set: {:.4f}'.format(naivebayes_classifier.score(X_test, y_test)))
-
