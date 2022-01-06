@@ -155,9 +155,9 @@ target = prediction_df['team1_win'] # target is y
 
 logReg=LogisticRegression(solver='lbfgs')
 
-rfe = RFE(logReg, 20) # 20 is test percentage
+'''rfe = RFE(logReg, 20) # 20 is test percentage
 
-rfe = rfe.fit(X, target.values.ravel())
+rfe = rfe.fit(X, target.values.ravel())'''
 
 # Splitting the data into training and testing data and scaling it
 
@@ -177,9 +177,9 @@ X_train_norm = norm.transform(X_train)
 # transform testing dataabs
 X_test_norm = norm.transform(X_test)
 
-"""print('X.shape', X.shape)
+print('X.shape', X.shape)
 print('X_train.shape', X_train.shape)
-print('X_test.shape', X_test.shape)"""
+print('X_test.shape', X_test.shape)
 
 
 # ## Building, Training & Testing the Model
@@ -187,20 +187,54 @@ print('X_test.shape', X_test.shape)"""
 # ### Logistic Regression
 
 logreg = LogisticRegression()
-
 logreg.fit(X_train, y_train)
-
 y_pred = logreg.predict(X_test)
-
-"""print("Confusion matrix\n ", confusion_matrix(y_test,y_pred))
-
+print("Confusion matrix\n ", confusion_matrix(y_test,y_pred))
 print(classification_report(y_test,y_pred))
-
 print('Accuracy of Logistic Regression classifier on test set: {:.2f}'.format(logreg.score(X_test, y_test)))
+print(confusion_matrix(y_test,y_pred),[0.0,1.0])
 
-print(confusion_matrix(y_test,y_pred),[0.0,1.0])"""
+# Creating Pickle file
+'''filename = 'IPL-match-prediction-lr-model.pkl'
+pickle.dump(logreg, open(filename, 'wb'))'''
 
+# ### SWM
 
-filename = 'IPL-match-prediction-lr-model.pkl'
-pickle.dump(logreg, open(filename, 'wb'))
+svm = SVC()
+svm.fit(X_train_norm,y_train)
+svm.score(X_test_norm,y_test)
+y1_pred = svm.predict(X_test_norm)
+print("Confusion matrix\n ", confusion_matrix(y_test,y1_pred))
+print(classification_report(y_test,y1_pred))
+print('Accuracy of SVM classifier on test set: {:.2f}'.format(svm.score(X_test_norm, y_test)))
+
+# ### Decision Tree
+
+dtree = DecisionTreeClassifier()
+dtree.fit(X_train_norm,y_train)
+dtree.score(X_test_norm,y_test)
+y2_pred = dtree.predict(X_test_norm)
+print("Confusion matrix\n ", confusion_matrix(y_test,y2_pred))
+print(classification_report(y_test,y2_pred))
+print('Accuracy of Decision Tree classifier on test set: {:.2f}'.format(dtree.score(X_test_norm, y_test)))
+
+# ### Random Forest
+
+randomForest= RandomForestClassifier(n_estimators=100)
+randomForest.fit(X_train_norm,y_train)
+randomForest.score(X_test_norm,y_test)
+y3_pred = randomForest.predict(X_test_norm)
+print("Confusion matrix\n ", confusion_matrix(y_test,y3_pred))
+print(classification_report(y_test,y3_pred))
+print('Accuracy of Random Forest classifier on test set: {:.4f}'.format(randomForest.score(X_test_norm, y_test)))
+
+# ### Naive Bayes
+
+naivebayes_classifier = GaussianNB()
+naivebayes_classifier.fit(X_train,y_train)
+naivebayes_classifier.score(X_test,y_test)
+y4_pred  =  naivebayes_classifier.predict(X_test)
+print("Confusion matrix\n ", confusion_matrix(y_test,y4_pred))
+print(classification_report(y_test,y4_pred))
+print('Accuracy of Naive Bayes classifier on test set: {:.4f}'.format(naivebayes_classifier.score(X_test, y_test)))
 
