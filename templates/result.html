@@ -88,10 +88,10 @@
 					<!-- Navbar end-->
 
 
-					<!-- content section -->
+					<!-- content section data-interval="false" -->
 					
 
-					<div id="carouselExampleIndicators" class="carousel slide ML my-5" data-mdb-ride="carousel">
+					<div id="carouselExampleIndicators" class="carousel slide ML my-5" >
 						<ol class="carousel-indicators">
 							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -467,7 +467,7 @@
 				<div class="modal-body">
 
 
-					<select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." 
+					<select id="F" class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." 
 					name = 'Home-Team'>
 							<option value="text" disabled="" selected="">Choose Your Team</option>
 							<option value="1">Mumbai Indians</option>
@@ -483,7 +483,7 @@
 					<label class="mdb-main-label">TEAM-A</label> 
 
 
-					<select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
+					<select id="S"class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
 					name = 'Away-Team'>
 							<option value="text" disabled="" selected="">Choose Your Team</option>
 							<option value="1">Mumbai Indians</option>
@@ -580,9 +580,9 @@
   </div>
   </div>
 </div>
-<div style="text-align: center;">		<!-- Set it's CSS-->
+<!-- <div style="text-align: center;">	
 	<p class="result_text">{{ prediction_text }}</p>
-</div> 
+</div>  -->
 
 <!-- IPL MATCH MODEL END -->
 <!-- IPL MATCH MODEL END -->
@@ -622,14 +622,17 @@
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
 $(document).ready(function() {
 	// $('.result_text').text('');
-	$('.predict_btn').click(function()
-		{
-			$('.result_text').text('');
+	// $('.predict_btn').click(function()
+	// 	{
+	// 		$('.result_text').text('');
 			
-		}
-	);
+	// 	}
+	// );
 	$('.mdb-select').materialSelect();
-	$('.carousel').carousel({})
+	$('.carousel').carousel({
+		interval: false,
+	})
+	$('')
 
 
 
