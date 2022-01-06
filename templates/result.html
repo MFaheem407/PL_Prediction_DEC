@@ -625,7 +625,7 @@ $(document).ready(function() {
 	$('.predict_btn').click(function()
 		{
 			$('.result_text').text('');
-			alert(`{{ prediction_text }}`)
+			
 		}
 	);
 	$('.mdb-select').materialSelect();
@@ -633,8 +633,10 @@ $(document).ready(function() {
 
 
 
-    //  const button = document.getElementById('IPL')
-    //  button.addEventListener('click', (event) => {});
+     const button = document.getElementById('IPL')
+     button.addEventListener('click', (event) => {
+		alert(`{{ prediction_text }}`)
+	 });
 
        
        
