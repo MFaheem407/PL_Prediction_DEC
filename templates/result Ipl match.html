@@ -63,9 +63,7 @@
 											<button onclick="location.href='LandingPage.html';" class="btn btn-danger BS">Home</button>
 
 										</li>
-										<li class="nav-item">
-											<button onclick="location.href='result.html';" class="btn btn-danger">Prediction</button>
-										</li>
+										
 										<li class="nav-item">
 											<button onclick="location.href='stats.html';" class="btn btn-danger BS">Stats</button>
 										</li>
@@ -199,27 +197,29 @@
 
 					</select>
 					<label class="mdb-main-label"><u>VENUE</u></label>
-				</div>
+				
 				
 				<div class="modal-footer">
         			<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
           				Close
         			</button>
-        		<div>
+        		
           			<button  type="submit" class="btn btn-warning  " id="IPL" >PREDICT</button>
         		</div>
        		</form>
+		</div>
 			
 			 
-    	</div>
+    	
 		
-    </div>
-  </div>
+   
 
   
 <div style="text-align: center;">	
 	<p class="result_text">{{ prediction_text }}</p>
 </div> 
+
+</div>
 
 <!-- IPL MATCH MODEL END -->
 
@@ -300,7 +300,7 @@ $(document).ready(function() {
 }); </script>
 <script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"></script>
 
-</div>
+
 </div>
 </body>
 </html>
