@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <link rel="icon" href="../assets/PL Logo Title.png">
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/css/mdb.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-addons-4.20.0.min.css"><link rel="stylesheet" type="text/css" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/mdb-plugins-gathered.min.css">
+
+
+	<title>PREDICTION</title>
+
+	<style>
+		@media (max-width: 768px) {
+			/* For mobile phones: */
+			.BS {
+				padding-right: 52px;
+				padding-left: 52px;
+				}
+				#logo {
+            width: 50px;
+            height: 50px;
+            
+           }}
+				@media (min-width: 768px) {  
+					.ML{
+						margin-left: 15%;
+						margin-right: 15%;
+					}
+					#mobilenav{
+						display: none;
+					}
+				}  
+
+
+			</style>
+		</head>
+
+
+		<body class="page-body" >
+			<div class="page-container">
+				<div class="main-content">
+
+					<!-- Navbar -->
+					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+						<div class="container-fluid">
+							<div>
+								<img id="logo" src="../assets/PL Logo.png" width="50px" height="50px" />
+							</div>  
+							<div class="d-flex justify-content-end">
+
+								<div class="collapse navbar-collapse" id="navbarExample01">
+									<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+										<li class="nav-item">
+											<button onclick="location.href='LandingPage.html';" class="btn btn-danger BS">Home</button>
+
+										</li>
+										<li class="nav-item">
+											<button onclick="location.href='result.html';" class="btn btn-danger">Prediction</button>
+										</li>
+										<li class="nav-item">
+											<button onclick="location.href='stats.html';" class="btn btn-danger BS">Stats</button>
+										</li>
+
+									</ul>
+								</div>
+								<button
+								class="navbar-toggler"
+								type="button"
+								data-mdb-toggle="collapse"
+								data-mdb-target="#navbarExample01"
+								aria-controls="navbarExample01"
+								aria-expanded="false"
+								aria-label="Toggle navigation"
+								>
+								<i class="fas fa-bars"></i>
+							</button>
+						</div></div>
+					</nav>
+					<!-- Navbar end-->
+
+
+					<!-- content section -->
+					
+
+					
+
+
+		<!-- content section end-->          
+
+
+
+		<!-- EPL MATCH MODEL -->
+		<div class="d-grid gap-2 col-12 mx-auto" >
+
+
+			<!-- Modal -->
+			<div
+			class="modal fade"
+			id="exampleModal"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+			>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">INPUT VALUES</h5>
+						<button
+						type="button"
+						class="btn-close"
+						data-mdb-dismiss="modal"
+						aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+
+
+
+						<select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here..">
+							<option value="" disabled="" selected="">Choose Your Team</option>
+							<option value="1">Tottenham Hotspur</option>
+							<option value="2">Manchester City</option>
+							<option value="3">Arsenal</option>
+							<option value="4">Chelsea </option>
+							<option value="5">Manchester United</option>
+							<option value="6">Everton</option>
+							<option value="7">Liverpool</option>
+							<option value="8">West Ham United</option>
+							<option value="9">Newcastle United</option>
+							<option value="10">Fulham</option>
+							<option value="11">Southampton</option>
+							<option value="12">Crystal Palace</option>
+							<option value="13">Burnley</option>
+							<option value="14">Leicester City</option>
+							<option value="15">Watford</option>
+							<option value="16">AFC Bournemouth</option>
+							<option value="17">Wolverhampton Wanderers</option>
+							<option value="18">Brighton and Hove Albion</option>
+							<option value="19">Cardiff City</option>
+							<option value="20">Huddersfield Town</option>
+						</select>
+
+						<label class="mdb-main-label">TEAM-A</label>
+
+
+
+						<select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here..">
+							<option value="" disabled="" selected="">Choose Your Team</option>
+							<option value="1">Tottenham Hotspur</option>
+							<option value="2">Manchester City</option>
+							<option value="3">Arsenal</option>
+							<option value="4">Chelsea </option>
+							<option value="5">Manchester United</option>
+							<option value="6">Everton</option>
+							<option value="7">Liverpool</option>
+							<option value="8">West Ham United</option>
+							<option value="9">Newcastle United</option>
+							<option value="10">Fulham</option>
+							<option value="11">Southampton</option>
+							<option value="12">Crystal Palace</option>
+							<option value="13">Burnley</option>
+							<option value="14">Leicester City</option>
+							<option value="15">Watford</option>
+							<option value="16">AFC Bournemouth</option>
+							<option value="17">Wolverhampton Wanderers</option>
+							<option value="18">Brighton and Hove Albion</option>
+							<option value="19">Cardiff City</option>
+							<option value="20">Huddersfield Town</option>
+						</select>
+
+						<label class="mdb-main-label">TEAM_B</label>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+							Close
+						</button>
+						<button type="button" class="btn btn-warning" id="EPL" onclick="alert('YYYYYY')">PREDICT</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- EPL MATCH MODEL END -->
+	</div>
+
+	<!-- IPL SCORE MODEL -->
+	<div class="d-grid gap-2 col-12 mx-auto" >
+
+
+		<!-- Modal -->
+		<div
+		class="modal fade"
+		id="exampleModal2"
+		tabindex="-1"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+		>
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">INPUT VALUES</h5>
+					<button
+					type="button"
+					class="btn-close"
+					data-mdb-dismiss="modal"
+					aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+
+
+
+
+					<select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here..">
+						<option value="" disabled="" selected="">Choose Your Team</option>
+						<option value="1">Mumbai Indians</option>
+						<option value="2">Sunrisers Hyderabad</option>
+						<option value="3">Kolkata Knight Riders</option>
+						<option value="4">Royal challangers banglore</option>
+						<option value="5">Delhi Capitals</option>
+						<option value="6">Chennai Super Kings</option>
+						<option value="7">Rajasthan Royals</option>
+						<option value="8">Punjab Kings</option>
+              <!--
+              <option value="9">Pune Warriors</option>
+              <option value="10">Rising Pune Super Giant</option>
+              <option value="11">Gujrat Lions</option>
+              <option value="12">Kochi Tuskers Kerala</option>
+          -->
+      </select>
+      <label class="mdb-main-label">TEAM-A</label>
+
+      <select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here..">
+      	<option value="" disabled="" selected="">Choose Your Team</option>
+      	<option value="1">Mumbai Indians</option>
+      	<option value="2">Sunrisers Hyderabad</option>
+      	<option value="3">Kolkata Knight Riders</option>
+      	<option value="4">Royal challangers banglore</option>
+      	<option value="5">Delhi Capitals</option>
+      	<option value="6">Chennai Super Kings</option>
+      	<option value="7">Rajasthan Royals</option>
+      	<option value="8">Punjab Kings</option>
+              <!--
+              <option value="9">Pune Warriors</option>
+              <option value="10">Rising Pune Super Giant</option>
+              <option value="11">Gujrat Lions</option>
+              <option value="12">Kochi Tuskers Kerala</option>
+          -->
+      </select>
+      <label class="mdb-main-label">TEAM-B</label>
+
+      <label class="mdb-main-label" style="color: #CC0000; padding-top: 32%;margin-left: 20px;">Current Over</label>
+      <input 
+      type="number" 
+      class="btn btn-danger md-form"  
+      style="margin-left: 120px;padding-right: 80px;padding-left: 80px;margin-right: 100px;" 
+      value=""
+      max="10" 
+      min="5"
+      placeholder="5 - 10">
+
+      <label class="mdb-main-label" style="color: #CC0000;;margin-left: 20px;">Curent Score</label>
+      <input 
+      type="number" 
+      class="btn btn-danger md-form"  
+      style="margin-left: 57px;padding-right: 80px;padding-left: 80px;" 
+      value=""
+      min="1"
+      >
+
+
+
+      <select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here..">
+      	<option value="" disabled="" selected="">Choose Wickets</option>
+      	<option value="1">1</option>
+      	<option value="2">2</option>
+      	<option value="3">3</option>
+      	<option value="4">4</option>
+      	<option value="5">5</option>
+      	<option value="6">6</option>
+      	<option value="7">7</option>
+      	<option value="8">8</option>
+      	<option value="9">9</option>
+      	<option value="10">10</option>
+      </select>
+      <label class="mdb-main-label">Currently Fallen Wickets</label>
+
+
+
+      <label class="mdb-main-label" style="color: #CC0000;padding-top: 85%">Runs in previous 5 overs</label>
+      <input 
+      type="number" 
+      class="btn btn-danger md-form"  
+      style="padding-right: 150px;padding-left: 150px;margin-top: 33px;" 
+      value=""
+
+      >
+
+      <label class="mdb-main-label" style="color: #CC0000;">Wickets in previous 5 overs</label>
+      <input 
+      type="number" 
+      class="btn btn-danger md-form mt-1"  
+      style="padding-right: 150px;padding-left: 150px;" 
+      value=""
+
+      >
+
+
+
+  </div>
+  <div class="modal-footer">
+  	<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+  		Close
+  	</button>
+  	<button type="button" class="btn btn-warning">PREDICT</button>
+  </div>
+</div>
+</div>
+
+  <!-- Result 
+  <div class="results">
+    <p class='result-p'>The final predicted score (range): {{ lower_limit }} to {{ upper_limit }}</p>
+  </div>
+-->
+</div></div>
+
+<!-- IPL SCORE MODEL END -->
+
+<!-- IPL MATCH MODEL -->
+<div class="d-grid gap-2 col-12 mx-auto" >
+
+
+	<!-- Modal -->
+	<div
+	class="modal fade"
+	id="exampleModal3"
+	tabindex="-1"
+	aria-labelledby="exampleModalLabel"
+	aria-hidden="true"
+	>
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">INPUT VALUES</h5>
+				<button
+				type="button"
+				class="btn-close"
+				data-mdb-dismiss="modal"
+				aria-label="Close"
+				></button>
+			</div>
+			<form action="{{ url_for('predict') }}" method="POST"> 
+				<div class="modal-body">
+
+
+					<select id="F" class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." 
+					name = 'Home-Team'>
+							<option value="text" disabled="" selected="">Choose Your Team</option>
+							<option value="1" id="1">Mumbai Indians</option>
+							<option value="2" id="2">Sunrisers Hyderabad</option>
+							<option value="3" id="3">Kolkata Knight Riders</option>
+							<option value="4" id="4">Royal challangers banglore</option>
+							<option value="5" id="5">Delhi Capitals</option>
+							<option value="6" id="6">Chennai Super Kings</option>
+							<option value="7" id="7">Rajasthan Royals</option>
+							<option value="8" id="8">Punjab Kings</option>
+
+					</select>
+					<label class="mdb-main-label">TEAM-A</label> 
+
+
+					<select id="S" class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
+					name = 'Away-Team'>
+							<option value="text" disabled="" selected="">Choose Your Team</option>
+							<option value="1" id="1">Mumbai Indians</option>
+							<option value="2" id="2">Sunrisers Hyderabad</option>
+							<option value="3" id="3">Kolkata Knight Riders</option>
+							<option value="4" id="4">Royal challangers banglore</option>
+							<option value="5" id="5">Delhi Capitals</option>
+							<option value="6" id="6">Chennai Super Kings</option>
+							<option value="7" id="7">Rajasthan Royals</option>
+							<option value="8" id="8">Punjab Kings</option>
+					</select>
+					<label class="mdb-main-label">TEAM_B</label>
+
+					<select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.."
+					name = 'team1_toss_win'>
+					<option value="" disabled="" selected="">TEAM_A TOSS_WIN YES/NO</option>
+					<option value="0.0">YES</option>
+					<option value="1.0">NO</option>
+
+					</select>
+					<label class="mdb-main-label">TEAM_A_TOSS_WIN</label>
+
+					<select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.."  
+					name = 'team1_bat'>
+					<option value="" disabled="" selected="">TEAM_A BAT YES/NO</option>
+					<option value="0.0">YES</option>
+					<option value="1.0">NO</option>
+					</select>
+					<label class="mdb-main-label">TEAM_A_BAT</label>
+
+					<select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
+					name = 'venue'>
+					<option value="" disabled="" selected="">Choose Venue</option>
+					<option value="1">Rajiv Gandhi International Stadium, Uppal</option>
+					<option value="2">Maharashtra Cricket Association Stadium</option>
+					<option value="3">Saurashtra Cricket Association Stadium</option>
+					<option value="4">Holkar Cricket Stadium</option>
+					<option value="5">M Chinnaswamy Stadium</option>
+					<option value="6">Wankhede Stadium</option>
+					<option value="7">Eden Gardens</option>
+					<option value="8">Feroz Shah Kotla</option>
+					<option value="9">Punjab Cricket Association IS Bindra Stadium, Mohali</option>
+					<option value="10">Green Park</option>
+					<option value="11">Punjab Cricket Association Stadium, Mohali</option>
+					<option value="12">Dr DY Patil Sports Academy</option>
+					<option value="13">Sawai Mansingh Stadium</option>
+					<option value="14">MA Chidambaram Stadium, Chepauk</option>
+					<option value="15">Newlands</option>
+					<option value="16">St George's Park</option>
+					<option value="17">Kingsmead</option>
+					<option value="18">SuperSport Park</option>
+					<option value="19">Buffalo Park</option>
+					<option value="20">New Wanderers Stadium</option>
+					<option value="21">De Beers Diamond Oval</option>
+					<option value="22">OUTsurance Oval</option>
+					<option value="23">Brabourne Stadium</option>
+					<option value="24">Sardar Patel Stadium</option>
+					<option value="25">Barabati Stadium</option>
+					<option value="26">Vidarbha Cricket Association Stadium, Jamtha</option>
+					<option value="27">Himachal Pradesh Cricket Association Stadium</option>
+					<option value="28">Nehru Stadium</option>
+					<option value="29">Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium</option>
+					<option value="30">Subrata Roy Sahara Stadium</option>
+					<option value="31">Shaheed Veer Narayan Singh International Stadium</option>
+					<option value="32">JSCA International Stadium Complex</option>
+					<option value="33">Sheikh Zayed Stadium</option>
+					<option value="34">Sharjah Cricket Stadium</option>
+					<option value="35">Dubai International Cricket Stadium</option>
+					<option value="36">M. A. Chidambaram Stadium</option>
+					<option value="37">Feroz Shah Kotla Ground</option>
+					<option value="38">M. Chinnaswamy Stadium</option>
+					<option value="39">Rajiv Gandhi Intl. Cricket Stadium</option>
+					<option value="40">IS Bindra Stadium</option>
+					<option value="41">ACA-VDCA Stadium</option>
+
+
+					</select>
+					<label class="mdb-main-label">VENUE</label>
+				</div>
+				
+				<div class="modal-footer">
+        			<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+          				Close
+        			</button>
+        		<div>
+          			<button  type="submit" class="btn btn-warning  " id="IPL" >PREDICT</button>
+        		</div>
+       		</form>
+			
+			 
+    	</div>
+		
+    </div>
+  </div>
+  </div>
+</div>
+<!-- <div style="text-align: center;">	
+	<p class="result_text">{{ prediction_text }}</p>
+</div>  -->
+
+<!-- IPL MATCH MODEL END -->
+<!-- IPL MATCH MODEL END -->
+
+
+<!-- footer-->
+<nav class="navbar fixed-bottom navbar-light bg-dark" id="fixednav"style="color:blanchedalmond ;">
+	<div class="container-fluid">
+		<div class="me-auto">
+
+		</div>
+		<div class="ms-auto">
+		&copy; Premier League (PL) | Match Prediction System</div>  </div>
+	</nav>
+
+    <!-- <nav class="navbar navbar-light bg-dark" id="mobilenav"style="color:blanchedalmond ;">
+      <div class="container-fluid">
+       <div class="me-auto">
+     
+       </div>
+       <div class="ms-auto">
+          &copy; Premier League (PL) | Match Prediction System</div>  </div>
+      </nav> -->
+      <!-- footer end-->
+
+
+
+
+
+
+
+
+      <!-- bootstrap script -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" ></script>
+
+<script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
+$(document).ready(function() {
+	// $('.result_text').text('');
+	// $('.predict_btn').click(function()
+	// 	{
+	// 		$('.result_text').text('');
+			
+	// 	}
+	// );
+	$('.mdb-select').materialSelect();
+	$('.carousel').carousel({
+		interval: false,
+	})
+	// $('#F').onchange(function(){
+		
+	// 	// const op = event.relatedTarget
+	// 	// const id = op.getAttribute("id");
+	// 	// // id.val() == '2'?
+	// 	// const qw = document.getElementById('S').getAttribute("id",id);
+	// 	document.getElementById('S').setAttribute('disabled');
+
+
+	// 	// $('.S').getAttribute
+	// 	// $('.S').id.setAttribute('disabled')
+
+	// });
+
+
+
+	// const button = document.getElementById('F')
+    //  button.addEventListener('click', (event) => {
+	// 	document.getElementById('S').setAttribute('disabled');
+	//  });
+
+
+     const button = document.getElementById('IPL')
+     button.addEventListener('click', (event) => {
+		alert(`{{ prediction_text }}`)
+	 });
+
+       
+       
+
+}); </script>
+<script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"></script>
+
+</div>
+</div>
+</body>
+</html>
+
+
