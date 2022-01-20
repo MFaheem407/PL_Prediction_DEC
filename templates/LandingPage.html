@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <link rel="icon" href="../assets/PL Logo Title.png">
 
 
@@ -34,12 +34,26 @@
 						margin-right: 15%;
 					}
 				}
+        body {
+            background:#000;
+             }
     </style>
 
 
 </head>
-<body>
-    <div class="page-container">
+<body class="page-body" onload="Loader_function()" id="q">
+
+  <div id="load" style="z-index: 999999;">
+    <div>G</div>
+    <div>N</div>
+    <div>I</div>
+    <div>D</div>
+    <div>A</div>
+    <div>O</div>
+    <div>L</div>
+    </div>
+
+   <div class="page-container"  style="display: none;" id="main-content">
         <div class="main-content">
             <header>
 <!-- Navbar -->
@@ -236,11 +250,44 @@
 
 
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
-    $(document).ready(function() {
-    $('.mdb-select').materialSelect();
-    $('.carousel').carousel({
+  
+// --Loader
+var loader = document.getElementById('load');
+var body = document.getElementById('q');
+    
+    function Loader_function(){
+		console.log("loaderfunction");
+		loader.style.display= 'none';
+		body.style.backgroundColor = "white";
+
+	}
+
+
+$(document).ready(function() {
+
+	// --Loader disappear
+	var page = document.getElementById("main-content");
+	page.style.display= "block";
+	
+	// --jinja disappear
+	$('.result_text').text('');
+	$('.predict_btn').click(function()
+		{
+			$('.result_text').text('');
+			
+		}
+	);
+
+	// --MDB
+	$('.mdb-select').materialSelect();
+	$('.carousel').carousel({
 		interval: false,
 	})
+
+
+       
+       
+
     });</script><script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"></script>
 
     

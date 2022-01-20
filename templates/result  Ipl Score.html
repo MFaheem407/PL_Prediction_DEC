@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <link rel="icon" href="../assets/PL Logo Title.png">
+	<link rel="stylesheet" type="text/css" href="loader.css">
+
 
 
 
@@ -38,16 +40,30 @@
 					#mobilenav{
 						display: none;
 					}
-				}  
+				} 
+				body {
+            background:#000;
+             } 
 
 
 			</style>
 		</head>
 
 
-		<body class="page-body" >
+		<body class="page-body"  onload="Loader_function()" id="q">
+			<div id="load" >
+				<div>G</div>
+				<div>N</div>
+				<div>I</div>
+				<div>D</div>
+				<div>A</div>
+				<div>O</div>
+				<div>L</div>
+			  </div>
+
+			 
 			<div class="page-container">
-				<div class="main-content">
+				<div class="main-content" style="display: none;" id="main-content">
 
 					<!-- Navbar -->
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -240,7 +256,26 @@
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" ></script>
 
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
+
+// --Loader
+var loader = document.getElementById('load');
+var body = document.getElementById('q');
+    
+    function Loader_function(){
+		console.log("loaderfunction");
+		loader.style.display= 'none';
+		body.style.backgroundColor = "white";
+
+	}
+
+
 $(document).ready(function() {
+
+	// --Loader disappear
+	var page = document.getElementById("main-content");
+	page.style.display= "block";
+	
+	// --jinja disappear
 	$('.result_text').text('');
 	$('.predict_btn').click(function()
 		{
@@ -248,36 +283,13 @@ $(document).ready(function() {
 			
 		}
 	);
+
+	// --MDB
 	$('.mdb-select').materialSelect();
 	$('.carousel').carousel({
 		interval: false,
 	})
-	// $('#F').onchange(function(){
-		
-	// 	// const op = event.relatedTarget
-	// 	// const id = op.getAttribute("id");
-	// 	// // id.val() == '2'?
-	// 	// const qw = document.getElementById('S').getAttribute("id",id);
-	// 	document.getElementById('S').setAttribute('disabled');
 
-
-	// 	// $('.S').getAttribute
-	// 	// $('.S').id.setAttribute('disabled')
-
-	// });
-
-
-
-	// const button = document.getElementById('F')
-    //  button.addEventListener('click', (event) => {
-	// 	document.getElementById('S').setAttribute('disabled');
-	//  });
-
-
-     const button = document.getElementById('IPL')
-     button.addEventListener('click', (event) => {
-		alert(`{{ prediction_text }}`)
-	 });
 
        
        
