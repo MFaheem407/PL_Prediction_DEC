@@ -91,7 +91,7 @@
 					<!-- content section -->
 					
 
-					<div id="carouselExampleIndicators" class="carousel slide ML my-5" data-mdb-ride="carousel">
+					<div id="carouselExampleIndicators" class="carousel slide ML my-5" data-interval="false">
 						<ol class="carousel-indicators">
 							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -467,33 +467,33 @@
 				<div class="modal-body">
 
 
-					<select class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." 
+					<select id="F" class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." 
 					name = 'Home-Team'>
 							<option value="text" disabled="" selected="">Choose Your Team</option>
-							<option value="1">Mumbai Indians</option>
-							<option value="2">Sunrisers Hyderabad</option>
-							<option value="3">Kolkata Knight Riders</option>
-							<option value="4">Royal challangers banglore</option>
-							<option value="5">Delhi Capitals</option>
-							<option value="6">Chennai Super Kings</option>
-							<option value="7">Rajasthan Royals</option>
-							<option value="8">Punjab Kings</option>
+							<option value="1" id="1">Mumbai Indians</option>
+							<option value="2" id="2">Sunrisers Hyderabad</option>
+							<option value="3" id="3">Kolkata Knight Riders</option>
+							<option value="4" id="4">Royal challangers banglore</option>
+							<option value="5" id="5">Delhi Capitals</option>
+							<option value="6" id="6">Chennai Super Kings</option>
+							<option value="7" id="7">Rajasthan Royals</option>
+							<option value="8" id="8">Punjab Kings</option>
 
 					</select>
 					<label class="mdb-main-label">TEAM-A</label> 
 
 
-					<select class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
+					<select id="S" class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
 					name = 'Away-Team'>
 							<option value="text" disabled="" selected="">Choose Your Team</option>
-							<option value="1">Mumbai Indians</option>
-							<option value="2">Sunrisers Hyderabad</option>
-							<option value="3">Kolkata Knight Riders</option>
-							<option value="4">Royal challangers banglore</option>
-							<option value="5">Delhi Capitals</option>
-							<option value="6">Chennai Super Kings</option>
-							<option value="7">Rajasthan Royals</option>
-							<option value="8">Punjab Kings</option>
+							<option value="1" id="1">Mumbai Indians</option>
+							<option value="2" id="2">Sunrisers Hyderabad</option>
+							<option value="3" id="3">Kolkata Knight Riders</option>
+							<option value="4" id="4">Royal challangers banglore</option>
+							<option value="5" id="5">Delhi Capitals</option>
+							<option value="6" id="6">Chennai Super Kings</option>
+							<option value="7" id="7">Rajasthan Royals</option>
+							<option value="8" id="8">Punjab Kings</option>
 					</select>
 					<label class="mdb-main-label">TEAM_B</label>
 
@@ -580,9 +580,9 @@
   </div>
   </div>
 </div>
-<div style="text-align: center;">		<!-- Set it's CSS-->
+<!-- <div style="text-align: center;">	
 	<p class="result_text">{{ prediction_text }}</p>
-</div> 
+</div>  -->
 
 <!-- IPL MATCH MODEL END -->
 <!-- IPL MATCH MODEL END -->
@@ -618,28 +618,51 @@
       <!-- bootstrap script -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" ></script>
 
-
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
 $(document).ready(function() {
 	// $('.result_text').text('');
-	$('.predict_btn').click(function()
-		{
-			$('.result_text').text('');
-		}
-	);
+	// $('.predict_btn').click(function()
+	// 	{
+	// 		$('.result_text').text('');
+			
+	// 	}
+	// );
 	$('.mdb-select').materialSelect();
-	$('.carousel').carousel({})
+	$('.carousel').carousel({
+		interval: false,
+	})
+	// $('#F').onchange(function(){
+		
+	// 	// const op = event.relatedTarget
+	// 	// const id = op.getAttribute("id");
+	// 	// // id.val() == '2'?
+	// 	// const qw = document.getElementById('S').getAttribute("id",id);
+	// 	document.getElementById('S').setAttribute('disabled');
+
+
+	// 	// $('.S').getAttribute
+	// 	// $('.S').id.setAttribute('disabled')
+
+	// });
 
 
 
-    // const button = document.getElementById('EPL')
-    // button.addEventListener('click', (event) => {
+	// const button = document.getElementById('F')
+    //  button.addEventListener('click', (event) => {
+	// 	document.getElementById('S').setAttribute('disabled');
+	//  });
 
-    //   const value = {{prediction_text}}
-    //   const button = event.relatedTarget
-    //   button.innerText = value
 
-});</script><script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"></script>
+     const button = document.getElementById('IPL')
+     button.addEventListener('click', (event) => {
+		alert(`{{ prediction_text }}`)
+	 });
+
+       
+       
+
+}); </script>
+<script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/plugins/mdb-plugins-gathered.min.js"></script>
 
 </div>
 </div>
