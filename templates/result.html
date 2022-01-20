@@ -88,7 +88,7 @@
 					<!-- Navbar end-->
 
 
-					<!-- content section data-interval="false" -->
+					<!-- content section -->
 					
 
 					<div id="carouselExampleIndicators" class="carousel slide ML my-5" data-interval="false">
@@ -470,30 +470,30 @@
 					<select id="F" class="mdb-select md-form colorful-select dropdown-danger" searchable="Search here.." 
 					name = 'Home-Team'>
 							<option value="text" disabled="" selected="">Choose Your Team</option>
-							<option value="1">Mumbai Indians</option>
-							<option value="2">Sunrisers Hyderabad</option>
-							<option value="3">Kolkata Knight Riders</option>
-							<option value="4">Royal challangers banglore</option>
-							<option value="5">Delhi Capitals</option>
-							<option value="6">Chennai Super Kings</option>
-							<option value="7">Rajasthan Royals</option>
-							<option value="8">Punjab Kings</option>
+							<option value="1" id="1">Mumbai Indians</option>
+							<option value="2" id="2">Sunrisers Hyderabad</option>
+							<option value="3" id="3">Kolkata Knight Riders</option>
+							<option value="4" id="4">Royal challangers banglore</option>
+							<option value="5" id="5">Delhi Capitals</option>
+							<option value="6" id="6">Chennai Super Kings</option>
+							<option value="7" id="7">Rajasthan Royals</option>
+							<option value="8" id="8">Punjab Kings</option>
 
 					</select>
 					<label class="mdb-main-label">TEAM-A</label> 
 
 
-					<select id="S"class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
+					<select id="S" class="mdb-select md-form colorful-select dropdown-danger" style="margin-top: 20%;" searchable="Search here.." 
 					name = 'Away-Team'>
 							<option value="text" disabled="" selected="">Choose Your Team</option>
-							<option value="1">Mumbai Indians</option>
-							<option value="2">Sunrisers Hyderabad</option>
-							<option value="3">Kolkata Knight Riders</option>
-							<option value="4">Royal challangers banglore</option>
-							<option value="5">Delhi Capitals</option>
-							<option value="6">Chennai Super Kings</option>
-							<option value="7">Rajasthan Royals</option>
-							<option value="8">Punjab Kings</option>
+							<option value="1" id="1">Mumbai Indians</option>
+							<option value="2" id="2">Sunrisers Hyderabad</option>
+							<option value="3" id="3">Kolkata Knight Riders</option>
+							<option value="4" id="4">Royal challangers banglore</option>
+							<option value="5" id="5">Delhi Capitals</option>
+							<option value="6" id="6">Chennai Super Kings</option>
+							<option value="7" id="7">Rajasthan Royals</option>
+							<option value="8" id="8">Punjab Kings</option>
 					</select>
 					<label class="mdb-main-label">TEAM_B</label>
 
@@ -618,7 +618,6 @@
       <!-- bootstrap script -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js" ></script>
 
-
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
 $(document).ready(function() {
 	// $('.result_text').text('');
@@ -632,8 +631,26 @@ $(document).ready(function() {
 	$('.carousel').carousel({
 		interval: false,
 	})
-	$('.F').onch
+	// $('#F').onchange(function(){
+		
+	// 	// const op = event.relatedTarget
+	// 	// const id = op.getAttribute("id");
+	// 	// // id.val() == '2'?
+	// 	// const qw = document.getElementById('S').getAttribute("id",id);
+	// 	document.getElementById('S').setAttribute('disabled');
 
+
+	// 	// $('.S').getAttribute
+	// 	// $('.S').id.setAttribute('disabled')
+
+	// });
+
+
+
+	// const button = document.getElementById('F')
+    //  button.addEventListener('click', (event) => {
+	// 	document.getElementById('S').setAttribute('disabled');
+	//  });
 
 
      const button = document.getElementById('IPL')
