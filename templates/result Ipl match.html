@@ -196,15 +196,13 @@
 
 
 					</select>
-					<label class="mdb-main-label"><u>VENUE</u></label>
+					<label class="mdb-main-label">VENUE</label>
 				
 				
 				<div class="modal-footer">
-        			<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-          				Close
-        			</button>
+        			
         		
-          			<button  type="submit" class="btn btn-warning  " id="IPL" >PREDICT</button>
+          			<button  type="submit" class="btn btn-warning  " id="button" >PREDICT</button>
         		</div>
        		</form>
 		</div>
@@ -256,13 +254,13 @@
 
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
 $(document).ready(function() {
-	// $('.result_text').text('');
-	// $('.predict_btn').click(function()
-	// 	{
-	// 		$('.result_text').text('');
+	$('.result_text').text('');
+	$('#button').click(function()
+		{
+			$('.result_text').text('');
 			
-	// 	}
-	// );
+		}
+	);
 	$('.mdb-select').materialSelect();
 	$('.carousel').carousel({
 		interval: false,
@@ -289,10 +287,10 @@ $(document).ready(function() {
 	//  });
 
 
-     const button = document.getElementById('IPL')
-     button.addEventListener('click', (event) => {
-		alert(`{{ prediction_text }}`)
-	 });
+    //  const button = document.getElementById('IPL')
+    //  button.addEventListener('click', (event) => {
+	// 	alert(`{{ prediction_text }}`)
+	//  });
 
        
        

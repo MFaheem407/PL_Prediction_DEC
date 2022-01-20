@@ -155,9 +155,7 @@
 
 				<label class="mdb-main-label">TEAM_B</label>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-					Close
-				</button>
+				
 				<button type="button" class="btn btn-warning" id="EPL" onclick="alert('YYYYYY')">PREDICT</button>
 			</div>
 			</form>
@@ -208,13 +206,13 @@
 
 <script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/jquery.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/popper.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/bootstrap.min.js"></script><script src="https://mdbootstrap.com/api/snippets/static/download/MDB-Pro_4.20.0/js/mdb.min.js"></script><script src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/bundles/4.20.0/compiled-addons.min.js"></script><script>// Material Select Initialization
 $(document).ready(function() {
-	// $('.result_text').text('');
-	// $('.predict_btn').click(function()
-	// 	{
-	// 		$('.result_text').text('');
+	$('.result_text').text('');
+	$('.predict_btn').click(function()
+		{
+			$('.result_text').text('');
 			
-	// 	}
-	// );
+		}
+	);
 	$('.mdb-select').materialSelect();
 	$('.carousel').carousel({
 		interval: false,
